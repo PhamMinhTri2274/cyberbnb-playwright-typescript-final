@@ -2,6 +2,10 @@
 
 Playwright + TypeScript, **Page Object Model**, chạy trên website thật https://demo5.cybersoft.edu.vn/. Chỉ gồm automation theo đề; không làm phần manual.
 
+Repo public: https://github.com/PhamMinhTri2274/cyberbnb-playwright-typescript-final
+
+Slide: [PowerPoint](presentation/CYBERBNB-BAO-VE.pptx) · [PDF](presentation/CYBERBNB-BAO-VE.pdf). Lời nói và hỏi đáp: [Hướng dẫn bảo vệ](docs/BAO-VE-DO-AN.md). Kết quả dễ đọc: tải repo rồi mở `submission/BAO-CAO.html`.
+
 ## Chạy trên máy mới
 
 Cài Node.js 24 LTS và Git, mở Terminal trong thư mục repo:
