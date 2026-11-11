@@ -1,0 +1,9 @@
+{
+  "basis": "Danh mục scenario khảo sát, chưa có bộ story/AC chính thức của giảng viên",
+  "automated": 45,
+  "core": 40,
+  "total": 60,
+  "executed": 45,
+  "implementedPercent": 75,
+  "conservativePercent": 66.66666666666666
+}

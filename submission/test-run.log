@@ -1,0 +1,151 @@
+2026-11-11T02:51:20.547Z RUN BEGIN
+2026-11-11T02:51:21.126Z START AUTH-01 | @smoke Đăng ký hợp lệ và đăng nhập tài khoản vừa tạo
+2026-11-11T02:51:21.417Z STEP AUTH-01 Đăng ký tài khoản duy nhất
+2026-11-11T02:51:26.544Z STEP AUTH-01 Đăng nhập bằng tài khoản vừa tạo
+2026-11-11T02:51:29.209Z END AUTH-01 | @smoke Đăng ký hợp lệ và đăng nhập tài khoản vừa tạo | passed | 7895ms
+2026-11-11T02:51:29.210Z START AUTH-02 | Đăng nhập bỏ trống hiển thị lỗi hai trường
+2026-11-11T02:51:32.071Z END AUTH-02 | Đăng nhập bỏ trống hiển thị lỗi hai trường | passed | 2848ms
+2026-11-11T02:51:32.071Z START AUTH-03 | Sai tài khoản hoặc mật khẩu không được đăng nhập
+2026-11-11T02:51:35.500Z END AUTH-03 | Sai tài khoản hoặc mật khẩu không được đăng nhập | passed | 3418ms
+2026-11-11T02:51:35.501Z START AUTH-04 | Mật khẩu trên form đăng nhập được che
+2026-11-11T02:51:38.298Z END AUTH-04 | Mật khẩu trên form đăng nhập được che | passed | 2783ms
+2026-11-11T02:51:38.299Z START AUTH-05 | Đăng ký bỏ trống không tạo tài khoản
+2026-11-11T02:51:41.727Z END AUTH-05 | Đăng ký bỏ trống không tạo tài khoản | passed | 3415ms
+2026-11-11T02:51:41.728Z START AUTH-06 | Email sai định dạng bị chặn ở đăng ký
+2026-11-11T02:51:46.540Z END AUTH-06 | Email sai định dạng bị chặn ở đăng ký | passed | 4798ms
+2026-11-11T02:51:46.541Z START AUTH-07 | @smoke Đăng xuất và F5 không khôi phục phiên
+2026-11-11T02:51:56.358Z END AUTH-07 | @smoke Đăng xuất và F5 không khôi phục phiên | passed | 9804ms
+2026-11-11T02:51:56.358Z START AUTH-08 | Phiên đăng nhập còn sau F5
+2026-11-11T02:52:03.842Z END AUTH-08 | Phiên đăng nhập còn sau F5 | passed | 7471ms
+2026-11-11T02:52:03.843Z START AUTH-09 | Khách chưa đăng nhập không truy cập được hồ sơ cá nhân
+2026-11-11T02:52:05.443Z END AUTH-09 | Khách chưa đăng nhập không truy cập được hồ sơ cá nhân | passed | 1588ms
+2026-11-11T02:52:05.443Z START AUTH-10 | Không cho đăng ký trùng email đã tồn tại
+2026-11-11T02:52:13.965Z END AUTH-10 | Không cho đăng ký trùng email đã tồn tại | passed | 8508ms
+2026-11-11T02:52:13.979Z START HOME-01 | @smoke Trang chủ và danh sách điểm đến tải được
+2026-11-11T02:52:15.097Z END HOME-01 | @smoke Trang chủ và danh sách điểm đến tải được | passed | 1101ms
+2026-11-11T02:52:15.098Z START SEARCH-01 | Mở danh sách chọn địa điểm
+2026-11-11T02:52:17.297Z END SEARCH-01 | Mở danh sách chọn địa điểm | passed | 2187ms
+2026-11-11T02:52:17.298Z START SEARCH-02 | Chọn địa điểm cập nhật ô tìm kiếm
+2026-11-11T02:52:18.541Z END SEARCH-02 | Chọn địa điểm cập nhật ô tìm kiếm | passed | 1230ms
+2026-11-11T02:52:18.541Z START SEARCH-03 | Tăng và giảm số khách tìm kiếm
+2026-11-11T02:52:20.013Z END SEARCH-03 | Tăng và giảm số khách tìm kiếm | passed | 1460ms
+2026-11-11T02:52:20.014Z START SEARCH-04 | Số khách tìm kiếm không giảm dưới một
+2026-11-11T02:52:22.074Z END SEARCH-04 | Số khách tìm kiếm không giảm dưới một | passed | 2045ms
+2026-11-11T02:52:22.074Z START LIST-01 | Danh mục Toàn bộ nhà mở danh sách phòng
+2026-11-11T02:52:25.187Z END LIST-01 | Danh mục Toàn bộ nhà mở danh sách phòng | passed | 3095ms
+2026-11-11T02:52:25.188Z START LIST-02 | Danh mục Chỗ ở độc đáo mở danh sách phòng
+2026-11-11T02:52:27.448Z END LIST-02 | Danh mục Chỗ ở độc đáo mở danh sách phòng | passed | 2241ms
+2026-11-11T02:52:27.449Z START LIST-03 | Danh mục Trang trại và thiên nhiên mở danh sách phòng
+2026-11-11T02:52:29.576Z END LIST-03 | Danh mục Trang trại và thiên nhiên mở danh sách phòng | passed | 2114ms
+2026-11-11T02:52:29.576Z START LIST-04 | Danh mục Cho phép mang theo thú cưng mở danh sách phòng
+2026-11-11T02:52:31.709Z END LIST-04 | Danh mục Cho phép mang theo thú cưng mở danh sách phòng | passed | 2119ms
+2026-11-11T02:52:31.710Z START LIST-05 | @smoke Từ thẻ phòng mở đúng trang chi tiết
+2026-11-11T02:52:34.657Z END LIST-05 | @smoke Từ thẻ phòng mở đúng trang chi tiết | passed | 2930ms
+2026-11-11T02:52:34.658Z START FILTER-01 | @candidate Nút Loại nơi ở phải có phản hồi để lọc
+2026-11-11T02:52:41.325Z END FILTER-01 | @candidate Nút Loại nơi ở phải có phản hồi để lọc | failed | 6119ms
+2026-11-11T02:52:41.325Z ERROR Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+
+Call Log:
+- Timeout 4000ms exceeded while waiting on the predicate
+2026-11-11T02:52:42.306Z START FILTER-02 | @candidate Nút Giá phải có phản hồi để lọc
+2026-11-11T02:52:49.019Z END FILTER-02 | @candidate Nút Giá phải có phản hồi để lọc | failed | 6026ms
+2026-11-11T02:52:49.020Z ERROR Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+
+Call Log:
+- Timeout 4000ms exceeded while waiting on the predicate
+2026-11-11T02:52:49.876Z START FILTER-03 | @candidate Nút Phòng và phòng ngủ phải có phản hồi để lọc
+2026-11-11T02:52:56.455Z END FILTER-03 | @candidate Nút Phòng và phòng ngủ phải có phản hồi để lọc | failed | 5916ms
+2026-11-11T02:52:56.456Z ERROR Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+
+Call Log:
+- Timeout 4000ms exceeded while waiting on the predicate
+2026-11-11T02:52:57.061Z START FILTER-04 | @candidate Nút Bộ lọc khác phải có phản hồi để lọc
+2026-11-11T02:53:03.769Z END FILTER-04 | @candidate Nút Bộ lọc khác phải có phản hồi để lọc | failed | 6164ms
+2026-11-11T02:53:03.769Z ERROR Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+
+Call Log:
+- Timeout 4000ms exceeded while waiting on the predicate
+2026-11-11T02:53:04.399Z START HOME-02 | Mobile mở và đóng menu điều hướng
+2026-11-11T02:53:06.747Z END HOME-02 | Mobile mở và đóng menu điều hướng | passed | 2151ms
+2026-11-11T02:53:06.757Z START PROFILE-01 | Hồ sơ hiển thị tên đúng và danh sách đặt phòng trống
+2026-11-11T02:53:14.473Z END PROFILE-01 | Hồ sơ hiển thị tên đúng và danh sách đặt phòng trống | passed | 7701ms
+2026-11-11T02:53:14.474Z START PROFILE-02 | Form sửa hồ sơ có đúng thông tin đã đăng ký
+2026-11-11T02:53:23.138Z END PROFILE-02 | Form sửa hồ sơ có đúng thông tin đã đăng ký | passed | 8648ms
+2026-11-11T02:53:23.139Z START PROFILE-03 | Cập nhật tên tài khoản của chính test và kiểm sau F5
+2026-11-11T02:53:35.332Z END PROFILE-03 | Cập nhật tên tài khoản của chính test và kiểm sau F5 | passed | 12179ms
+2026-11-11T02:53:35.333Z START PROFILE-04 | Đóng form sửa không lưu tên đang nhập
+2026-11-11T02:53:44.714Z END PROFILE-04 | Đóng form sửa không lưu tên đang nhập | passed | 9370ms
+2026-11-11T02:53:44.724Z START REVIEW-01 | Đăng nhập thấy form viết bình luận
+2026-11-11T02:53:52.574Z END REVIEW-01 | Đăng nhập thấy form viết bình luận | passed | 7837ms
+2026-11-11T02:53:52.575Z START REVIEW-02 | Gửi bình luận duy nhất và kiểm sau F5
+2026-11-11T02:54:01.397Z END REVIEW-02 | Gửi bình luận duy nhất và kiểm sau F5 | passed | 8810ms
+2026-11-11T02:54:01.398Z START AVATAR-01 | Mở và đóng form cập nhật ảnh
+2026-11-11T02:54:09.956Z END AVATAR-01 | Mở và đóng form cập nhật ảnh | passed | 8546ms
+2026-11-11T02:54:09.956Z START AVATAR-02 | Upload PNG cho chính tài khoản QA và kiểm sau F5
+2026-11-11T02:54:19.290Z END AVATAR-02 | Upload PNG cho chính tài khoản QA và kiểm sau F5 | passed | 9320ms
+2026-11-11T02:54:19.301Z START ROOM-01 | @smoke Chi tiết phòng có tên giá và nút đặt phòng
+2026-11-11T02:54:20.551Z END ROOM-01 | @smoke Chi tiết phòng có tên giá và nút đặt phòng | passed | 1239ms
+2026-11-11T02:54:20.552Z START ROOM-02 | Tăng rồi giảm số khách đặt phòng
+2026-11-11T02:54:22.561Z END ROOM-02 | Tăng rồi giảm số khách đặt phòng | passed | 1998ms
+2026-11-11T02:54:22.561Z START ROOM-03 | Số khách đặt phòng không thấp hơn một
+2026-11-11T02:54:23.986Z END ROOM-03 | Số khách đặt phòng không thấp hơn một | passed | 1407ms
+2026-11-11T02:54:23.987Z START ROOM-04 | Chọn ngày nhận và trả phòng tương lai
+2026-11-11T02:54:27.540Z END ROOM-04 | Chọn ngày nhận và trả phòng tương lai | passed | 3538ms
+2026-11-11T02:54:27.540Z START ROOM-05 | Tiền phòng hai đêm cộng phí bằng tổng hiển thị
+2026-11-11T02:54:30.644Z END ROOM-05 | Tiền phòng hai đêm cộng phí bằng tổng hiển thị | passed | 3089ms
+2026-11-11T02:54:30.644Z START ROOM-06 | Khách chưa đăng nhập không có form gửi bình luận
+2026-11-11T02:54:31.965Z END ROOM-06 | Khách chưa đăng nhập không có form gửi bình luận | passed | 1309ms
+2026-11-11T02:54:31.966Z START ROOM-07 | @candidate Thu gọn tiện nghi đổi trạng thái hiển thị
+2026-11-11T02:54:49.949Z END ROOM-07 | @candidate Thu gọn tiện nghi đổi trạng thái hiển thị | failed | 17496ms
+2026-11-11T02:54:49.949Z ERROR Error: expect(locator).toHaveCount(expected) failed
+
+Locator:  getByRole('button', { name: 'Ẩn bớt tiện nghi', exact: true })
+Expected: 0
+Received: 1
+Timeout:  15000ms
+
+Call log:
+  - Expect "toHaveCount" getByRole('button', { name: 'Ẩn bớt tiện nghi', exact: true }) with timeout 15000ms
+  - waiting for getByRole('button', { name: 'Ẩn bớt tiện nghi', exact: true })
+    32 × locator resolved to 1 element
+       - unexpected value "1"
+
+2026-11-11T02:54:51.282Z START ROOM-08 | Mở ảnh xem trước và đóng ảnh
+2026-11-11T02:54:53.916Z END ROOM-08 | Mở ảnh xem trước và đóng ảnh | passed | 2378ms
+2026-11-11T02:54:53.917Z START BOOK-01 | @smoke Đặt phòng và thấy phòng đã thuê sau F5
+2026-11-11T02:55:06.497Z END BOOK-01 | @smoke Đặt phòng và thấy phòng đã thuê sau F5 | passed | 12564ms
+2026-11-11T02:55:06.497Z START BOOK-02 | Hủy popup xác nhận không tạo đặt phòng
+2026-11-11T02:55:17.349Z END BOOK-02 | Hủy popup xác nhận không tạo đặt phòng | passed | 10838ms
+2026-11-11T02:55:17.350Z START BOOK-03 | Xác nhận hiển thị đúng ngày và số khách đã chọn
+2026-11-11T02:55:29.592Z END BOOK-03 | Xác nhận hiển thị đúng ngày và số khách đã chọn | passed | 12223ms
+2026-11-11T02:55:29.592Z START BOOK-04 | Chưa đăng nhập bấm đặt phòng được yêu cầu đăng nhập
+2026-11-11T02:55:30.852Z END BOOK-04 | Chưa đăng nhập bấm đặt phòng được yêu cầu đăng nhập | passed | 1248ms
+2026-11-11T02:55:31.074Z RUN END failed

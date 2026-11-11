@@ -1,0 +1,22 @@
+const fs=require('node:fs'),path=require('node:path');
+const input=JSON.parse(fs.readFileSync('test-results/results.json','utf8'));
+fs.mkdirSync('submission/evidence',{recursive:true});
+for(const name of fs.readdirSync('submission/evidence'))if(/^[A-Z]+-\d+-\d+\.png$/.test(name))fs.unlinkSync(path.join('submission/evidence',name));
+const rows=[];
+function walk(s){for(const spec of s.specs||[])for(const t of spec.tests||[]){const r=t.results.at(-1);const id=spec.title.split(' | ')[0];const shots=[];
+ for(const [i,a] of (r.attachments||[]).entries())if(a.contentType==='image/png'&&(a.body||(a.path&&fs.existsSync(a.path)))){
+  const dest=`evidence/${id}-${i+1}.png`;if(a.body)fs.writeFileSync(path.join('submission',dest),Buffer.from(a.body,'base64'));else fs.copyFileSync(a.path,path.join('submission',dest));shots.push(dest);
+ }
+ rows.push({id,title:spec.title,status:r.status,durationMs:r.duration,candidate:spec.title.includes('@candidate'),evidence:shots,error:(r.error?.message||'').replace(/\u001b\[[0-9;]*m/g,'')});
+}for(const child of s.suites||[])walk(child);}
+for(const s of input.suites||[])walk(s);
+const counts=Object.fromEntries(['passed','failed','skipped','timedOut','interrupted'].map(s=>[s,rows.filter(r=>r.status===s).length]));
+const summary={generatedAt:new Date().toISOString(),startedAt:input.stats.startTime,durationMs:input.stats.duration,baseURL:input.config.projects[0].use?.baseURL||'https://demo5.cybersoft.edu.vn',counts,total:rows.length,core:rows.filter(r=>!r.candidate).length,candidate:rows.filter(r=>r.candidate).length,tests:rows};
+fs.writeFileSync('submission/results.json',JSON.stringify(summary,null,2));
+if(fs.existsSync('logs/test-run.log'))fs.copyFileSync('logs/test-run.log','submission/test-run.log');
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const table=rows.map(r=>`<tr><td>${esc(r.id)}</td><td>${esc(r.title)}</td><td class="${r.status}">${esc(r.status)}</td><td>${(r.durationMs/1000).toFixed(1)}s</td><td>${r.evidence.map(e=>`<a href="${e}">Ảnh</a>`).join(' ')}<details><summary>Chi tiết</summary><pre>${esc(r.error||'Assertions đạt; xem source để biết phạm vi kiểm tra.')}</pre></details></td></tr>`).join('');
+fs.writeFileSync('submission/BAO-CAO.html',`<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Kết quả automation Cyberbnb</title><style>body{font:16px system-ui;max-width:1300px;margin:40px auto;padding:0 24px;color:#173042}h1{font-size:32px}table{border-collapse:collapse;width:100%}td,th{padding:12px;text-align:left;border-bottom:1px solid #ddd;vertical-align:top}th{background:#173042;color:white}.passed{color:#176835}.failed,.timedOut{color:#b32031}pre{white-space:pre-wrap;max-width:480px;font-size:12px}a{color:#0969da}small{color:#52616b}</style><h1>Báo cáo kiểm thử tự động Cyberbnb</h1><p>${esc(summary.startedAt)} • Chromium • ${(summary.durationMs/60000).toFixed(1)} phút</p><h2>${counts.passed} Pass / ${counts.failed} Fail / ${counts.skipped} Skip • ${rows.length} test</h2><p>Có ${summary.candidate} test @candidate cho nút chưa có phản hồi; kỳ vọng UX cần xác nhận đặc tả. Fail của test không tự động chứng minh một bug nghiệp vụ đã được duyệt.</p><p>Không dùng dữ liệu giả lập response. Tài khoản QA tự tạo, đặt phòng/đánh giá/upload chỉ trên tài khoản của lần chạy. Báo cáo đầy đủ: npm run report.</p><table><thead><tr><th>ID</th><th>Nội dung</th><th>Kết quả</th><th>Thời gian</th><th>Evidence</th></tr></thead><tbody>${table}</tbody></table></html>`);
+fs.writeFileSync('RUN-RESULTS.md',`# Kết quả automation thực tế\n\nLần chạy: ${summary.startedAt}. Chromium. Thời gian ${(summary.durationMs/1000).toFixed(1)} giây.\n\n${rows.length} test: **${counts.passed} passed, ${counts.failed} failed, ${counts.skipped} skipped, ${counts.timedOut} timedOut**.\n\n${summary.core} test core; ${summary.candidate} test UX @candidate. Xem docs/AUTOMATION-SCOPE.md trước khi diễn giải coverage. Không tính code coverage.\n\n|ID|Nội dung|Kết quả|Thời gian|Evidence|\n|---|---|---|---|---|\n${rows.map(r=>`|${r.id}|${r.title.replaceAll('|','—')}|${r.status}|${(r.durationMs/1000).toFixed(1)}s|${r.evidence.map(e=>`[Ảnh](submission/${e})`).join(' ')}|`).join('\n')}\n\nẢnh, video và trace nguyên bản nằm trong test-results (không public vì trace có thể chứa phiên đăng nhập). Bản submission chỉ có summary và ảnh.\n`);
+console.log(JSON.stringify({total:rows.length,...counts,core:summary.core,candidate:summary.candidate}));
+require('./inventory.cjs');

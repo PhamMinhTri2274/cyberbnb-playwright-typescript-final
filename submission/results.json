@@ -1,0 +1,436 @@
+{
+  "generatedAt": "2026-11-11T02:56:58.293Z",
+  "startedAt": "2026-11-11T02:51:20.361Z",
+  "durationMs": 250699.266,
+  "baseURL": "https://demo5.cybersoft.edu.vn",
+  "counts": {
+    "passed": 40,
+    "failed": 5,
+    "skipped": 0,
+    "timedOut": 0,
+    "interrupted": 0
+  },
+  "total": 45,
+  "core": 40,
+  "candidate": 5,
+  "tests": [
+    {
+      "id": "AUTH-01",
+      "title": "AUTH-01 | @smoke Đăng ký hợp lệ và đăng nhập tài khoản vừa tạo",
+      "status": "passed",
+      "durationMs": 7895,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-02",
+      "title": "AUTH-02 | Đăng nhập bỏ trống hiển thị lỗi hai trường",
+      "status": "passed",
+      "durationMs": 2848,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-03",
+      "title": "AUTH-03 | Sai tài khoản hoặc mật khẩu không được đăng nhập",
+      "status": "passed",
+      "durationMs": 3418,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-04",
+      "title": "AUTH-04 | Mật khẩu trên form đăng nhập được che",
+      "status": "passed",
+      "durationMs": 2783,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-05",
+      "title": "AUTH-05 | Đăng ký bỏ trống không tạo tài khoản",
+      "status": "passed",
+      "durationMs": 3415,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-06",
+      "title": "AUTH-06 | Email sai định dạng bị chặn ở đăng ký",
+      "status": "passed",
+      "durationMs": 4798,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-07",
+      "title": "AUTH-07 | @smoke Đăng xuất và F5 không khôi phục phiên",
+      "status": "passed",
+      "durationMs": 9804,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-08",
+      "title": "AUTH-08 | Phiên đăng nhập còn sau F5",
+      "status": "passed",
+      "durationMs": 7471,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-09",
+      "title": "AUTH-09 | Khách chưa đăng nhập không truy cập được hồ sơ cá nhân",
+      "status": "passed",
+      "durationMs": 1588,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AUTH-10",
+      "title": "AUTH-10 | Không cho đăng ký trùng email đã tồn tại",
+      "status": "passed",
+      "durationMs": 8508,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "HOME-01",
+      "title": "HOME-01 | @smoke Trang chủ và danh sách điểm đến tải được",
+      "status": "passed",
+      "durationMs": 1101,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "SEARCH-01",
+      "title": "SEARCH-01 | Mở danh sách chọn địa điểm",
+      "status": "passed",
+      "durationMs": 2187,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "SEARCH-02",
+      "title": "SEARCH-02 | Chọn địa điểm cập nhật ô tìm kiếm",
+      "status": "passed",
+      "durationMs": 1230,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "SEARCH-03",
+      "title": "SEARCH-03 | Tăng và giảm số khách tìm kiếm",
+      "status": "passed",
+      "durationMs": 1460,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "SEARCH-04",
+      "title": "SEARCH-04 | Số khách tìm kiếm không giảm dưới một",
+      "status": "passed",
+      "durationMs": 2045,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "LIST-01",
+      "title": "LIST-01 | Danh mục Toàn bộ nhà mở danh sách phòng",
+      "status": "passed",
+      "durationMs": 3095,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "LIST-02",
+      "title": "LIST-02 | Danh mục Chỗ ở độc đáo mở danh sách phòng",
+      "status": "passed",
+      "durationMs": 2241,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "LIST-03",
+      "title": "LIST-03 | Danh mục Trang trại và thiên nhiên mở danh sách phòng",
+      "status": "passed",
+      "durationMs": 2114,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "LIST-04",
+      "title": "LIST-04 | Danh mục Cho phép mang theo thú cưng mở danh sách phòng",
+      "status": "passed",
+      "durationMs": 2119,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "LIST-05",
+      "title": "LIST-05 | @smoke Từ thẻ phòng mở đúng trang chi tiết",
+      "status": "passed",
+      "durationMs": 2930,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "FILTER-01",
+      "title": "FILTER-01 | @candidate Nút Loại nơi ở phải có phản hồi để lọc",
+      "status": "failed",
+      "durationMs": 6119,
+      "candidate": true,
+      "evidence": [
+        "evidence/FILTER-01-1.png"
+      ],
+      "error": "Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nNút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate"
+    },
+    {
+      "id": "FILTER-02",
+      "title": "FILTER-02 | @candidate Nút Giá phải có phản hồi để lọc",
+      "status": "failed",
+      "durationMs": 6026,
+      "candidate": true,
+      "evidence": [
+        "evidence/FILTER-02-1.png"
+      ],
+      "error": "Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nNút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate"
+    },
+    {
+      "id": "FILTER-03",
+      "title": "FILTER-03 | @candidate Nút Phòng và phòng ngủ phải có phản hồi để lọc",
+      "status": "failed",
+      "durationMs": 5916,
+      "candidate": true,
+      "evidence": [
+        "evidence/FILTER-03-1.png"
+      ],
+      "error": "Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nNút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate"
+    },
+    {
+      "id": "FILTER-04",
+      "title": "FILTER-04 | @candidate Nút Bộ lọc khác phải có phản hồi để lọc",
+      "status": "failed",
+      "durationMs": 6164,
+      "candidate": true,
+      "evidence": [
+        "evidence/FILTER-04-1.png"
+      ],
+      "error": "Error: Nút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nNút lọc phải mở nội dung lựa chọn hoặc cập nhật danh sách/URL; cần xác nhận đặc tả với giảng viên.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate"
+    },
+    {
+      "id": "HOME-02",
+      "title": "HOME-02 | Mobile mở và đóng menu điều hướng",
+      "status": "passed",
+      "durationMs": 2151,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "PROFILE-01",
+      "title": "PROFILE-01 | Hồ sơ hiển thị tên đúng và danh sách đặt phòng trống",
+      "status": "passed",
+      "durationMs": 7701,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "PROFILE-02",
+      "title": "PROFILE-02 | Form sửa hồ sơ có đúng thông tin đã đăng ký",
+      "status": "passed",
+      "durationMs": 8648,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "PROFILE-03",
+      "title": "PROFILE-03 | Cập nhật tên tài khoản của chính test và kiểm sau F5",
+      "status": "passed",
+      "durationMs": 12179,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "PROFILE-04",
+      "title": "PROFILE-04 | Đóng form sửa không lưu tên đang nhập",
+      "status": "passed",
+      "durationMs": 9370,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "REVIEW-01",
+      "title": "REVIEW-01 | Đăng nhập thấy form viết bình luận",
+      "status": "passed",
+      "durationMs": 7837,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "REVIEW-02",
+      "title": "REVIEW-02 | Gửi bình luận duy nhất và kiểm sau F5",
+      "status": "passed",
+      "durationMs": 8810,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AVATAR-01",
+      "title": "AVATAR-01 | Mở và đóng form cập nhật ảnh",
+      "status": "passed",
+      "durationMs": 8546,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "AVATAR-02",
+      "title": "AVATAR-02 | Upload PNG cho chính tài khoản QA và kiểm sau F5",
+      "status": "passed",
+      "durationMs": 9320,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-01",
+      "title": "ROOM-01 | @smoke Chi tiết phòng có tên giá và nút đặt phòng",
+      "status": "passed",
+      "durationMs": 1239,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-02",
+      "title": "ROOM-02 | Tăng rồi giảm số khách đặt phòng",
+      "status": "passed",
+      "durationMs": 1998,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-03",
+      "title": "ROOM-03 | Số khách đặt phòng không thấp hơn một",
+      "status": "passed",
+      "durationMs": 1407,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-04",
+      "title": "ROOM-04 | Chọn ngày nhận và trả phòng tương lai",
+      "status": "passed",
+      "durationMs": 3538,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-05",
+      "title": "ROOM-05 | Tiền phòng hai đêm cộng phí bằng tổng hiển thị",
+      "status": "passed",
+      "durationMs": 3089,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-06",
+      "title": "ROOM-06 | Khách chưa đăng nhập không có form gửi bình luận",
+      "status": "passed",
+      "durationMs": 1309,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "ROOM-07",
+      "title": "ROOM-07 | @candidate Thu gọn tiện nghi đổi trạng thái hiển thị",
+      "status": "failed",
+      "durationMs": 17496,
+      "candidate": true,
+      "evidence": [
+        "evidence/ROOM-07-1.png"
+      ],
+      "error": "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByRole('button', { name: 'Ẩn bớt tiện nghi', exact: true })\nExpected: 0\nReceived: 1\nTimeout:  15000ms\n\nCall log:\n  - Expect \"toHaveCount\" getByRole('button', { name: 'Ẩn bớt tiện nghi', exact: true }) with timeout 15000ms\n  - waiting for getByRole('button', { name: 'Ẩn bớt tiện nghi', exact: true })\n    32 × locator resolved to 1 element\n       - unexpected value \"1\"\n"
+    },
+    {
+      "id": "ROOM-08",
+      "title": "ROOM-08 | Mở ảnh xem trước và đóng ảnh",
+      "status": "passed",
+      "durationMs": 2378,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "BOOK-01",
+      "title": "BOOK-01 | @smoke Đặt phòng và thấy phòng đã thuê sau F5",
+      "status": "passed",
+      "durationMs": 12564,
+      "candidate": false,
+      "evidence": [
+        "evidence/BOOK-01-1.png",
+        "evidence/BOOK-01-2.png"
+      ],
+      "error": ""
+    },
+    {
+      "id": "BOOK-02",
+      "title": "BOOK-02 | Hủy popup xác nhận không tạo đặt phòng",
+      "status": "passed",
+      "durationMs": 10838,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "BOOK-03",
+      "title": "BOOK-03 | Xác nhận hiển thị đúng ngày và số khách đã chọn",
+      "status": "passed",
+      "durationMs": 12223,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    },
+    {
+      "id": "BOOK-04",
+      "title": "BOOK-04 | Chưa đăng nhập bấm đặt phòng được yêu cầu đăng nhập",
+      "status": "passed",
+      "durationMs": 1248,
+      "candidate": false,
+      "evidence": [],
+      "error": ""
+    }
+  ]
+}

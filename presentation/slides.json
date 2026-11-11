@@ -1,0 +1,165 @@
+[
+  {
+    "title": "Cyberbnb\nUI Automation",
+    "cover": true,
+    "lines": [
+      "TypeScript · Playwright · Page Object Model",
+      "Đồ án cuối khóa Tester Cybersoft",
+      "11/11/2026"
+    ],
+    "notes": "Em trình bày framework kiểm thử giao diện Cyberbnb. Phạm vi bài này chỉ gồm automation theo yêu cầu. Framework có log, báo cáo và screenshot khi fail. Nguồn yêu cầu: rubric người học cung cấp."
+  },
+  {
+    "title": "Luồng người dùng",
+    "lines": [
+      "Chọn điểm đến → xem danh sách phòng",
+      "Mở chi tiết → chọn ngày và số khách",
+      "Đăng nhập → xác nhận đặt phòng",
+      "Vào hồ sơ → xem phòng đã thuê"
+    ],
+    "notes": "Cyberbnb là website demo đặt chỗ ở. Người dùng tìm phòng và chọn điều kiện ở. Bấm Đặt phòng mở popup; Xác nhận mới tạo booking. Hồ sơ còn có sửa thông tin và avatar. Nguồn UI: https://demo5.cybersoft.edu.vn/ khảo sát 11/11/2026."
+  },
+  {
+    "title": "Phạm vi kiểm thử",
+    "lines": [
+      "Tài khoản: đăng ký, đăng nhập, phiên và đăng xuất",
+      "Tìm phòng, danh mục, chi tiết, ngày và số khách",
+      "Booking: tạo, hủy popup, dữ liệu xác nhận, đọc lại",
+      "Hồ sơ, ảnh đại diện và bình luận",
+      "45 test chạy thật trên Chromium; có negative tests"
+    ],
+    "notes": "Bài có cả đường thành công và từ chối đầu vào sai. Một kịch bản mobile kiểm menu. Không nói mọi trình duyệt hoặc mọi tổ hợp đầu vào đều đã kiểm. Chi tiết: docs/AUTOMATION-SCOPE.md và source tests."
+  },
+  {
+    "title": "Cấu trúc framework",
+    "lines": [
+      "tests/          kịch bản và kết quả cần kiểm tra",
+      "pages/        locator và thao tác của mỗi trang",
+      "fixtures/      cấp page object và account độc lập",
+      "config         môi trường, timeout và evidence",
+      "reporters/   ghi log       scripts/   tổng hợp báo cáo"
+    ],
+    "notes": "Tests nói cần kiểm gì, Page Object nói thao tác thế nào. Fixture cấp dữ liệu và tài nguyên. Config áp dụng chung. Reporter và script chuyển kết quả chạy thành bằng chứng. Nguồn: source repo; https://playwright.dev/docs/pom; https://playwright.dev/docs/test-fixtures."
+  },
+  {
+    "title": "Page Object Model",
+    "code": true,
+    "lines": [
+      "// pages/RoomPage.ts",
+      "async book() {",
+      "  await this.page.getByRole('button', {",
+      "    name: 'Đặt phòng', exact: true",
+      "  }).click();",
+      "}",
+      "",
+      "// tests/room-booking.spec.ts",
+      "await room.book();",
+      "await expect(room.confirmation).toBeVisible();"
+    ],
+    "notes": "Đây là Model, không phải Modal. room.book gom locator và thao tác. Assertion của popup nằm ở test. Nếu nhãn nút đổi, sửa Page Object. Không nên để mỗi test tự viết lại toàn bộ locator. Nguồn: pages/RoomPage.ts; https://playwright.dev/docs/pom."
+  },
+  {
+    "title": "Dữ liệu và tính độc lập",
+    "lines": [
+      "Mỗi test có browser context riêng",
+      "Email UUID; ngày đặt sinh trong tương lai",
+      "Chỉ test cần account mới kích hoạt đăng ký",
+      "Một worker; retry 0 để tránh booking trùng",
+      "Chưa có cleanup UI: dữ liệu QA còn trên demo"
+    ],
+    "notes": "Context cô lập cookie/storage, không tự xóa dữ liệu backend. Account fixture tạo tài khoản riêng nên test không phụ thuộc thứ tự. Một full run tạo một booking, một review và avatar trên account của suite. Không chỉnh dữ liệu người khác. Nguồn: fixtures/test.ts và cấu hình."
+  },
+  {
+    "title": "Locator, chờ và assertion",
+    "lines": [
+      "Locator: getByRole('button', { name: 'Đặt phòng' })",
+      "expect chờ đúng điều kiện với timeout giới hạn",
+      "Không dùng sleep cố định trong test",
+      "Upload chờ request UI hoàn tất trước khi F5",
+      "Assertion kiểm dữ liệu, không chỉ kiểm đã bấm"
+    ],
+    "notes": "Thiếu await có thể gây thao tác sai thứ tự. Locator và expect có cơ chế chờ. Request upload phát sinh từ UI, test không gọi API trực tiếp. Phải đợi upload hoàn tất mới reload để tránh hủy request. Nguồn: source tests và https://playwright.dev/docs/test-assertions."
+  },
+  {
+    "title": "BOOK-01: đặt phòng từ đầu đến cuối",
+    "lines": [
+      "Trước khi đặt: 0 phòng đã thuê",
+      "Chọn ngày → Đặt phòng → Xác nhận",
+      "Vào hồ sơ: đúng 1 thẻ phòng",
+      "F5: thẻ phòng vẫn còn",
+      "Đính kèm ảnh cả khi test Pass"
+    ],
+    "notes": "Test kiểm baseline để tránh false positive do dữ liệu cũ. Sau xác nhận, mở hồ sơ và reload. Card có lại không chứng minh mọi trường backend đúng. Để xác minh ngày, khách và tiền lưu chính xác cần view chi tiết booking hoặc API được cho phép. Nguồn: BOOK-01 và ảnh đính kèm của full run."
+  },
+  {
+    "title": "Log và bằng chứng lỗi",
+    "lines": [
+      "File log: timestamp, Test ID, status, duration",
+      "HTML report: từng test và từng assertion",
+      "Fail: screenshot + video + trace",
+      "JSON/JUnit để tổng hợp và tích hợp CI",
+      "Public repo chỉ giữ summary và ảnh đã kiểm"
+    ],
+    "notes": "Screenshot thể hiện trạng thái tại lúc fail, video diễn biến và trace chứa hành động/network. Trace có thể chứa session nên không public. Raw artifacts giữ local hoặc GitHub Actions theo quyền truy cập. Nguồn: reporter/config; https://playwright.dev/docs/test-reporters."
+  },
+  {
+    "title": "Kết quả chạy thực tế",
+    "metric": true,
+    "lines": [
+      "40 Pass",
+      "5 Fail",
+      "45 test · 4.2 phút",
+      "40 core · 5 UX candidate",
+      "Bắt đầu: 2026-11-11T02:51:20.361Z"
+    ],
+    "notes": "Lần chạy 2026-11-11T02:51:20.361Z, có 40 passed, 5 failed, 0 skipped. Không chuyển failure thành expected failure. Kết quả phụ thuộc phiên bản demo và dữ liệu dùng chung. Nguồn: submission/results.json và raw test-results/results.json."
+  },
+  {
+    "title": "Các failure cần đối chiếu đặc tả",
+    "lines": [
+      "Bốn nút bộ lọc chưa có phản hồi quan sát được",
+      "Nút thu gọn tiện nghi chưa đổi trạng thái kỳ vọng",
+      "Có ảnh và trace cho từng test Fail",
+      "Gắn @candidate vì chưa có AC chính thức",
+      "Cần xác nhận trước khi kết luận bug nghiệp vụ"
+    ],
+    "notes": "Phải phân biệt assertion fail, lỗi script và bug sản phẩm. Bốn nút lọc và nút tiện nghi có kỳ vọng từ nhãn UI; chưa có story/AC chi tiết. Bài giữ nguyên kết quả fail, không ép xanh. Source: các test @candidate và ảnh của lần chạy."
+  },
+  {
+    "title": "Automation coverage",
+    "lines": [
+      "Danh mục khảo sát: 60 scenario",
+      "Có script: 45/60 = 75%",
+      "Loại UX candidate: 40/60 = 66.67%",
+      "Vượt 40% trong scope đã công bố",
+      "Chưa phải code coverage hay toàn bộ story chính thức"
+    ],
+    "notes": "Cần nói rõ mẫu số. Mẫu số 60 gồm 45 có script và 15 backlog liệt kê trong coverage.csv. Pass rate khác coverage. Cần map lại nếu giảng viên giao thêm story. Không có source ứng dụng nên không đo code coverage. Nguồn: submission/coverage.csv, coverage.json và docs/AUTOMATION-SCOPE.md."
+  },
+  {
+    "title": "Demo và chạy lại",
+    "code": true,
+    "lines": [
+      "npm ci",
+      "npx playwright install chromium",
+      "npm run typecheck",
+      "npm run test:smoke",
+      "npm run report",
+      "",
+      "GitHub Actions → Run workflow",
+      "Artifacts → report, log và evidence"
+    ],
+    "notes": "Demo đầu tiên cấu trúc repo, rồi chạy smoke hoặc riêng BOOK-01 với --headed. Mở report, ảnh và assertion. CI dùng workflow_dispatch để tránh mỗi push tạo dữ liệu. Có thể dùng báo cáo full run đã lưu nếu mạng không ổn; phải nói rõ timestamp. Nguồn: README và .github/workflows/playwright.yml."
+  },
+  {
+    "title": "Giới hạn và hướng mở rộng",
+    "lines": [
+      "Chưa kiểm admin, xóa account, thanh toán hoặc tải",
+      "Chưa chạy Firefox/Safari và regression mobile đầy đủ",
+      "Cần story/AC để chốt các kỳ vọng UX",
+      "Cần cơ chế cleanup trước khi tăng worker/retry",
+      "Bước tiếp: hoàn tất backlog và map requirement → test"
+    ],
+    "notes": "Em ghi rõ phần đã kiểm và chưa kiểm. Không dùng kết quả Chromium để khẳng định Safari đúng, không đoán UI hay API xóa dữ liệu. Có thể mở rộng dự án bằng browser projects, dữ liệu seed/cleanup được cấp và requirement mapping. Em dùng AI hỗ trợ nhưng phải giải thích được source và evidence."
+  }
+]
